@@ -1,5 +1,5 @@
 # HarvestWatermelon（スイカ採り）
-学生の頃cocos2dxで作ったアプリをDagger-Hiltなどの勉強のためにnative(kotlin)で作ってみました。使用については少し変更を加えております。
+学生の頃cocos2dxで作ったアプリをDagger-Hiltなどの勉強のためにnative(kotlin)で作ってみました。仕様については少し変更を加えております。
 https://github.com/yuki14/harvest-watermelon
 スイカ採り。棒人間をスワイプしてスイカを収穫するゲームです。採るスイカによってポイントがことなります。
 
