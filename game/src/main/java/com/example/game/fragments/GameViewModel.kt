@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class GameViewModel @Inject constructor() : ViewModel() {
-    private val mCountDownTimer = MutableLiveData<Long>().also { it.value = 5 }
+    private val mCountDownTimer = MutableLiveData<Long>().also { it.value = 60 }
     val countDownTimer: LiveData<Long>
         get() = mCountDownTimer
 
