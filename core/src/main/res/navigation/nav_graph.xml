@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/TopFragment">
+
+    <fragment
+        android:id="@+id/TopFragment"
+        android:name="com.example.harvestwatermelon.fragments.TopFragment"
+        android:label="@string/top_fragment_label">
+    </fragment>
+
+    <include app:graph="@navigation/game_nav_graph" />
+
+</navigation>

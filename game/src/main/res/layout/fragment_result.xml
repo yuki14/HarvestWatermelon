@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="scoreViewModel"
+            type="com.example.game.fragments.ScoreViewModel" />
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg">
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/result"
+            android:textColor="@android:color/white"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toTopOf="@id/scoreResultTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.120000005"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/scoreResultTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:text="@{`スコア：` + scoreViewModel.score + `点`}"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:visibility='@{scoreViewModel.score == null ? View.GONE : View.VISIBLE}'
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/rankingRecyclerView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resultTextView"
+            app:layout_constraintVertical_bias="0.07999998"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="スコア：-200点" />
+
+        <Button
+            android:id="@+id/backToTitleButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back_to_title"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:theme="@style/ThemeOverlay.Button.White"
+            app:layout_constraintBottom_toTopOf="@id/retryButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resultTextView"
+            app:layout_constraintVertical_bias="0.76"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <Button
+            android:id="@+id/retryButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/retry"
+            android:textColor="@android:color/black"
+            android:textSize="34sp"
+            android:theme="@style/ThemeOverlay.Button.White"
+            android:visibility='@{scoreViewModel.score == null ? View.INVISIBLE : View.VISIBLE}'
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/backToTitleButton" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rankingRecyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:visibility="@{scoreViewModel.scoreList.size() == 0 ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toTopOf="@id/backToTitleButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/scoreResultTextView"
+            app:layout_constraintTop_toBottomOf="@id/resultTextView"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_goneMarginStart="32dp" />
+
+        <TextView
+            android:id="@+id/noDataTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/no_data"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:visibility="gone"
+            android:visibilityAfterSetCollectionData="@{scoreViewModel.scoreList}"
+            android:emptyVisibility="@{View.VISIBLE}"
+            android:notEmptyVisibility="@{View.GONE}"
+            app:layout_constraintBottom_toTopOf="@id/backToTitleButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resultTextView"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

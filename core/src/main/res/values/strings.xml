@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Harvestwatermelon</string>
+    <string name="app_title">スイカ採り</string>
+    <string name="action_settings">Settings</string>
+    <string name="top_fragment_label">Top Fragment</string>
+    <string name="game_fragment_label">Game Fragment</string>
+    <string name="result_fragment_label">Result Fragment</string>
+
+    <string name="play">開始</string>
+    <string name="check_ranking">ランキング確認</string>
+    <string name="background">background</string>
+    <string name="description">ルール説明です。タップするとゲームが始まります。</string>
+    <string name="result">結果</string>
+    <string name="no_data">記録なし</string>
+    <string name="back_to_title">タイトルへ戻る</string>
+    <string name="retry">再挑戦</string>
+
+    <string-array name = "ranking_label">
+        <item>第一位</item>
+        <item>第二位</item>
+        <item>第三位</item>
+    </string-array>
+</resources>
