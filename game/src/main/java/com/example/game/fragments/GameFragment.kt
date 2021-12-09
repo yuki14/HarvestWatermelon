@@ -16,7 +16,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
 import coil.clear
-import coil.load
 import com.example.core.animateTranslationAboveWithFadeOut
 import com.example.core.views.OtsukisamaImageView
 import com.example.core.views.WaterMelonImageView
@@ -114,9 +113,9 @@ class GameFragment : Fragment() {
                     ConstraintSet().apply {
                         val waterMelonImageView =
                             when (gameViewModel?.randomValueForWaterMelonType?.value) {
-                                in 0..4 -> waterMelonFactory.create().apply { load(R.drawable.watermelon) }
-                                in 5..6 -> otsukisamaFactory.create().apply { load(R.drawable.otsukisama) }
-                                else -> wizenedWaterMelonFactory.create().apply { load(R.drawable.wizenedwatermelon) }
+                                in 0..4 -> waterMelonFactory.create()
+                                in 5..6 -> otsukisamaFactory.create()
+                                else -> wizenedWaterMelonFactory.create()
                             }
                         waterMelonImageView.id = generateViewId()
 
