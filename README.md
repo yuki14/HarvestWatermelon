@@ -44,6 +44,7 @@ https://github.com/yuki14/harvest-watermelon
 - 使用技術
     - Kotlin
     - Coroutines
+    - ConstraintLayout-Flow
     - AAC
       - Navigation Component
       - LiveData
